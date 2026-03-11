@@ -3,3 +3,9 @@ services:
     build: ./ingest-api
     ports: 
       - 8000:8000
+    volumes:
+      - ./ingest-api:/app
+      - ingest-api-venv:/app/.venv
+
+volumes:
+  ingest-api-venv:
