@@ -25,9 +25,7 @@ class GuestSegmentation(BaseModel):
 
 
 class Revenue(BaseModel):
-    rideIncome: float
-    shopIncome: float
-    admissionsIncome: float
+    totalIncomeFromAdmissions: float
     entranceFee: float
     totalAdmissions: int
     cash: float
