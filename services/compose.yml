@@ -44,5 +44,16 @@ services:
         condition: service_healthy
     command: ["/opt/kafka/bin/kafka-topics.sh", "--bootstrap-server", "kafka:9092", "--create", "--topic", "telemetry.raw", "--partitions", "3", "--config", "retention.bytes=-1", "--replication-factor", "1"]
 
+  kafka-ui:
+    image: provectuslabs/kafka-ui:latest
+    container_name: kafka-ui
+    ports: 
+      - 8080:8080
+    environment:
+      - DYNAMIC_CONFIG_ENABLED='true'
+      - KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS=kafka:9092
+    volumes:
+      - ~/kui/config.yml:/etc/kafkaui/dynamic_config.yaml
+
 volumes:
   ingest-api-venv:
