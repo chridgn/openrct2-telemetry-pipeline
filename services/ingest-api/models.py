@@ -61,6 +61,11 @@ class Staff(BaseModel):
     ridesPerMechanic: Optional[float] = None  # null when no mechanics present
 
 
+class ParkIdentity(BaseModel):
+    name: str
+    scenarioFilename: str
+
+
 class Environment(BaseModel):
     weather: str
     temperature: float
@@ -71,6 +76,7 @@ class Environment(BaseModel):
 class Snapshot(BaseModel):
     tick: int
     type: str
+    park: ParkIdentity
     environment: Environment
     metrics: Metrics
     guests: GuestSegmentation

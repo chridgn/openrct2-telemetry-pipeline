@@ -6,6 +6,17 @@
     {"name": "tick", "type": "int"},
     {"name": "type", "type": "string"},
     {
+      "name": "park",
+      "type": {
+        "type": "record",
+        "name": "ParkIdentity",
+        "fields": [
+          {"name": "name", "type": "string"},
+          {"name": "scenarioFilename", "type": "string"}
+        ]
+      }
+    },
+    {
       "name": "environment",
       "type": {
         "type": "record",
