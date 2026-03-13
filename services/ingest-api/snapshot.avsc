@@ -1,0 +1,115 @@
+{
+  "type": "record",
+  "name": "Snapshot",
+  "namespace": "com.openrct2.telemetry",
+  "fields": [
+    {"name": "tick", "type": "int"},
+    {"name": "type", "type": "string"},
+    {
+      "name": "environment",
+      "type": {
+        "type": "record",
+        "name": "Environment",
+        "fields": [
+          {"name": "weather", "type": "string"},
+          {"name": "temperature", "type": "double"},
+          {"name": "month", "type": "int"},
+          {"name": "year", "type": "int"}
+        ]
+      }
+    },
+    {
+      "name": "metrics",
+      "type": {
+        "type": "record",
+        "name": "Metrics",
+        "fields": [
+          {"name": "averageCash", "type": "double"},
+          {"name": "averageHappiness", "type": "double"},
+          {"name": "parkRating", "type": "int"},
+          {"name": "rideReliability", "type": "double"},
+          {"name": "averageQueueTime", "type": "double"},
+          {"name": "averageRideDowntime", "type": "double"},
+          {"name": "averageRideSatisfaction", "type": "double"}
+        ]
+      }
+    },
+    {
+      "name": "guests",
+      "type": {
+        "type": "record",
+        "name": "GuestSegmentation",
+        "fields": [
+          {"name": "total", "type": "int"},
+          {"name": "happy", "type": "int"},
+          {"name": "neutral", "type": "int"},
+          {"name": "unhappy", "type": "int"},
+          {"name": "nauseated", "type": "int"},
+          {"name": "hungry", "type": "int"},
+          {"name": "thirsty", "type": "int"},
+          {"name": "lost", "type": "int"},
+          {"name": "broke", "type": "int"},
+          {"name": "totalSpendingPower", "type": "double"}
+        ]
+      }
+    },
+    {
+      "name": "revenue",
+      "type": {
+        "type": "record",
+        "name": "Revenue",
+        "fields": [
+          {"name": "totalIncomeFromAdmissions", "type": "double"},
+          {"name": "entranceFee", "type": "double"},
+          {"name": "totalAdmissions", "type": "int"},
+          {"name": "cash", "type": "double"},
+          {"name": "bankLoan", "type": "double"},
+          {"name": "companyValue", "type": "double"},
+          {"name": "parkValue", "type": "double"}
+        ]
+      }
+    },
+    {
+      "name": "rides",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "record",
+          "name": "Ride",
+          "fields": [
+            {"name": "id", "type": "int"},
+            {"name": "name", "type": "string"},
+            {"name": "type", "type": "int"},
+            {"name": "status", "type": "string"},
+            {"name": "totalCustomers", "type": "int"},
+            {"name": "totalProfit", "type": "double"},
+            {"name": "runningCost", "type": "double"},
+            {"name": "buildCost", "type": "double"},
+            {"name": "excitement", "type": "double"},
+            {"name": "intensity", "type": "double"},
+            {"name": "nausea", "type": "double"},
+            {"name": "reliability", "type": "double"},
+            {"name": "downtime", "type": "double"},
+            {"name": "satisfaction", "type": "double"},
+            {"name": "age", "type": "int"},
+            {"name": "avgQueueTime", "type": "double"}
+          ]
+        }
+      }
+    },
+    {
+      "name": "staff",
+      "type": {
+        "type": "record",
+        "name": "Staff",
+        "fields": [
+          {"name": "handymenCount", "type": "int"},
+          {"name": "mechanicCount", "type": "int"},
+          {"name": "securityCount", "type": "int"},
+          {"name": "entertainerCount", "type": "int"},
+          {"name": "ridesPerMechanic", "type": ["null", "double"], "default": null}
+        ]
+      }
+    }
+  ]
+}
