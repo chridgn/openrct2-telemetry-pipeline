@@ -22,8 +22,8 @@
         "type": "record",
         "name": "Environment",
         "fields": [
-          {"name": "weather", "type": "string"},
-          {"name": "temperature", "type": "double"},
+          {"name": "weather", "type": ["null", "string"], "default": null},
+          {"name": "temperature", "type": ["null", "double"], "default": null},
           {"name": "month", "type": "int"},
           {"name": "year", "type": "int"}
         ]
@@ -35,13 +35,13 @@
         "type": "record",
         "name": "Metrics",
         "fields": [
-          {"name": "averageCash", "type": "double"},
-          {"name": "averageHappiness", "type": "double"},
-          {"name": "parkRating", "type": "int"},
-          {"name": "rideReliability", "type": "double"},
-          {"name": "averageQueueTime", "type": "double"},
-          {"name": "averageRideDowntime", "type": "double"},
-          {"name": "averageRideSatisfaction", "type": "double"}
+          {"name": "averageCash", "type": ["null", "double"], "default": null},
+          {"name": "averageHappiness", "type": ["null", "double"], "default": null},
+          {"name": "parkRating", "type": ["null", "int"], "default": null},
+          {"name": "rideReliability", "type": ["null", "double"], "default": null},
+          {"name": "averageQueueTime", "type": ["null", "double"], "default": null},
+          {"name": "averageRideDowntime", "type": ["null", "double"], "default": null},
+          {"name": "averageRideSatisfaction", "type": ["null", "double"], "default": null}
         ]
       }
     },
@@ -51,16 +51,16 @@
         "type": "record",
         "name": "GuestSegmentation",
         "fields": [
-          {"name": "total", "type": "int"},
-          {"name": "happy", "type": "int"},
-          {"name": "neutral", "type": "int"},
-          {"name": "unhappy", "type": "int"},
-          {"name": "nauseated", "type": "int"},
-          {"name": "hungry", "type": "int"},
-          {"name": "thirsty", "type": "int"},
-          {"name": "lost", "type": "int"},
-          {"name": "broke", "type": "int"},
-          {"name": "totalSpendingPower", "type": "double"}
+          {"name": "total", "type": ["null", "int"], "default": null},
+          {"name": "happy", "type": ["null", "int"], "default": null},
+          {"name": "neutral", "type": ["null", "int"], "default": null},
+          {"name": "unhappy", "type": ["null", "int"], "default": null},
+          {"name": "nauseated", "type": ["null", "int"], "default": null},
+          {"name": "hungry", "type": ["null", "int"], "default": null},
+          {"name": "thirsty", "type": ["null", "int"], "default": null},
+          {"name": "lost", "type": ["null", "int"], "default": null},
+          {"name": "broke", "type": ["null", "int"], "default": null},
+          {"name": "totalSpendingPower", "type": ["null", "double"], "default": null}
         ]
       }
     },
@@ -70,13 +70,13 @@
         "type": "record",
         "name": "Revenue",
         "fields": [
-          {"name": "totalIncomeFromAdmissions", "type": "double"},
-          {"name": "entranceFee", "type": "double"},
-          {"name": "totalAdmissions", "type": "int"},
-          {"name": "cash", "type": "double"},
-          {"name": "bankLoan", "type": "double"},
-          {"name": "companyValue", "type": "double"},
-          {"name": "parkValue", "type": "double"}
+          {"name": "totalIncomeFromAdmissions", "type": ["null", "double"], "default": null},
+          {"name": "entranceFee", "type": ["null", "double"], "default": null},
+          {"name": "totalAdmissions", "type": ["null", "int"], "default": null},
+          {"name": "cash", "type": ["null", "double"], "default": null},
+          {"name": "bankLoan", "type": ["null", "double"], "default": null},
+          {"name": "companyValue", "type": ["null", "double"], "default": null},
+          {"name": "parkValue", "type": ["null", "double"], "default": null}
         ]
       }
     },
@@ -92,18 +92,18 @@
             {"name": "name", "type": "string"},
             {"name": "type", "type": "int"},
             {"name": "status", "type": "string"},
-            {"name": "totalCustomers", "type": "int"},
-            {"name": "totalProfit", "type": "double"},
-            {"name": "runningCost", "type": "double"},
-            {"name": "buildCost", "type": "double"},
-            {"name": "excitement", "type": "double"},
-            {"name": "intensity", "type": "double"},
-            {"name": "nausea", "type": "double"},
-            {"name": "reliability", "type": "double"},
-            {"name": "downtime", "type": "double"},
-            {"name": "satisfaction", "type": "double"},
-            {"name": "age", "type": "int"},
-            {"name": "avgQueueTime", "type": "double"}
+            {"name": "totalCustomers", "type": ["null", "int"], "default": null},
+            {"name": "totalProfit", "type": ["null", "double"], "default": null},
+            {"name": "runningCost", "type": ["null", "double"], "default": null},
+            {"name": "buildCost", "type": ["null", "double"], "default": null},
+            {"name": "excitement", "type": ["null", "double"], "default": null},
+            {"name": "intensity", "type": ["null", "double"], "default": null},
+            {"name": "nausea", "type": ["null", "double"], "default": null},
+            {"name": "reliability", "type": ["null", "double"], "default": null},
+            {"name": "downtime", "type": ["null", "double"], "default": null},
+            {"name": "satisfaction", "type": ["null", "double"], "default": null},
+            {"name": "age", "type": ["null", "int"], "default": null},
+            {"name": "avgQueueTime", "type": ["null", "double"], "default": null}
           ]
         }
       }
@@ -114,10 +114,10 @@
         "type": "record",
         "name": "Staff",
         "fields": [
-          {"name": "handymenCount", "type": "int"},
-          {"name": "mechanicCount", "type": "int"},
-          {"name": "securityCount", "type": "int"},
-          {"name": "entertainerCount", "type": "int"},
+          {"name": "handymenCount", "type": ["null", "int"], "default": null},
+          {"name": "mechanicCount", "type": ["null", "int"], "default": null},
+          {"name": "securityCount", "type": ["null", "int"], "default": null},
+          {"name": "entertainerCount", "type": ["null", "int"], "default": null},
           {"name": "ridesPerMechanic", "type": ["null", "double"], "default": null}
         ]
       }
