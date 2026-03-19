@@ -33,7 +33,7 @@ avro_serializer = AvroSerializer(
 
 def produce_message(message: dict):
     serialized_value = avro_serializer(message, SerializationContext(LANDING_TOPIC, MessageField.VALUE))
-    key=f"{message['park']['name']}:{message['park']['scenarioFileName']}"
+    key=f"{message['park']['name']}:{message['park']['scenarioFilename']}"
     producer.produce(topic=LANDING_TOPIC, key=key, value=serialized_value)
     producer.flush()
 
